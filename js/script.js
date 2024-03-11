@@ -66,7 +66,7 @@ rnButton.addEventListener("click", function(){
     const immagini =document.getElementById('immagini');
     if(userNumber <=0 || userNumber >6 || userNumber === ''){
         rnResult.innerHTML='errore inserisci un numero valido tra 1 e 6'
-        immagini.innerHTML=''
+        // immagini.innerHTML='';
     }else if(randomNumber>userNumber){
     rnResult.innerHTML=`hai perso il computer ha scelto: ${randomNumber}`
     }else if(randomNumber == userNumber){
@@ -76,8 +76,9 @@ rnButton.addEventListener("click", function(){
     }
 
     // <img src="dadi/1.svg" alt="1.svg"></img>
-   
-    if(randomNumber == 1){
+    if(userNumber === ''){
+    immagini.innerHTML='';
+    }else if(randomNumber == 1){
         immagini.innerHTML= `<img src="dadi/1.svg" alt="1.svg"></img>`
     }else if(randomNumber == 2){
         immagini.innerHTML= `<img src="dadi/2.svg" alt="2.svg"></img>`
