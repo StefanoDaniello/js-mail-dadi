@@ -28,6 +28,8 @@ emButton.addEventListener("click", function(){
     if(found){
         console.log('la tua email e presente nel sistema');
         emResult.innerHTML='la tua email e presente nel sistema'
+    }else if(userEmail === '' || isNaN(userNumber)){
+        emResult.innerHTML='Errrore inserisci un email'
     }else{
         console.log('la tua email non e presente nel sistema');
         emResult.innerHTML='la tua email non e presente nel sistema'
@@ -56,8 +58,8 @@ rnButton.addEventListener("click", function(){
     if(userNumber <0 || userNumber >6 || userNumber === ''){
         rnResult.innerHTML='errore inserisci un numero valido tra 0 e 6'
     }else if(randomNumber>userNumber){
-    rnResult.innerHTML='hai perso'
+    rnResult.innerHTML=`hai perso il computer ha scelto: ${randomNumber}`
     }else{
-    rnResult.innerHTML='hai vinto'
+    rnResult.innerHTML=`hai vinto il computer ha scelto: ${randomNumber}`
     }
 })
