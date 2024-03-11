@@ -77,17 +77,17 @@ rnButton.addEventListener("click", function(){
 
     // <img src="dadi/1.svg" alt="1.svg"></img>
    
-    if(userNumber == 1){
+    if(randomNumber == 1){
         immagini.innerHTML= `<img src="dadi/1.svg" alt="1.svg"></img>`
-    }else if(userNumber == 2){
+    }else if(randomNumber == 2){
         immagini.innerHTML= `<img src="dadi/2.svg" alt="2.svg"></img>`
-    }else if(userNumber == 3){
+    }else if(randomNumber == 3){
         immagini.innerHTML= `<img src="dadi/3.svg" alt="3.svg"></img>`
-    }else if(userNumber == 4){
+    }else if(randomNumber == 4){
         immagini.innerHTML= `<img src="dadi/4.svg" alt="4.svg"></img>`
-    }else if(userNumber == 5){
+    }else if(randomNumber == 5){
         immagini.innerHTML= `<img src="dadi/5.svg" alt="5.svg"></img>`
-    }else if(userNumber == 6){
+    }else if(randomNumber == 6){
         immagini.innerHTML= `<img src="dadi/6.svg" alt="6.svg"></img>`
     }
 })
@@ -96,5 +96,5 @@ const rnClear = document.getElementById('rnClear');
 rnClear.addEventListener("click", function(){
     userNumber.value= '';
     rnResult.innerHTML= '';
-    immagini.innerHTML=''
+    immagini.innerHTML='';
 })
