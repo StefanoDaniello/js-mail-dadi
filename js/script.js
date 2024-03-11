@@ -28,7 +28,7 @@ emButton.addEventListener("click", function(){
     if(found){
         console.log('la tua email e presente nel sistema');
         emResult.innerHTML='la tua email e presente nel sistema'
-    }else if(userEmail === '' || isNaN(userNumber)){
+    }else if(userEmail === '' || !isNaN(userEmail)){
         emResult.innerHTML='Errrore inserisci un email'
     }else{
         console.log('la tua email non e presente nel sistema');
@@ -54,14 +54,33 @@ rnButton.addEventListener("click", function(){
     console.log(randomNumber);
     let userNumber=document.getElementById('userNumber').value;
     console.log(userNumber)
+
     const rnResult = document.getElementById('rnResult');
-    if(userNumber <0 || userNumber >6 || userNumber === ''){
-        rnResult.innerHTML='errore inserisci un numero valido tra 0 e 6'
+    const immagini =document.getElementById('immagini');
+    if(userNumber <=0 || userNumber >6 || userNumber === ''){
+        rnResult.innerHTML='errore inserisci un numero valido tra 1 e 6'
+        immagini.innerHTML=''
     }else if(randomNumber>userNumber){
     rnResult.innerHTML=`hai perso il computer ha scelto: ${randomNumber}`
     }else if(randomNumber == userNumber){
         rnResult.innerHTML=`hai pareggiato il computer ha scelto: ${randomNumber}`
     }else{
     rnResult.innerHTML=`hai vinto il computer ha scelto: ${randomNumber}`
+    }
+
+    // <img src="dadi/1.svg" alt="1.svg"></img>
+   
+    if(userNumber == 1){
+        immagini.innerHTML= `<img src="dadi/1.svg" alt="1.svg"></img>`
+    }else if(userNumber == 2){
+        immagini.innerHTML= `<img src="dadi/2.svg" alt="2.svg"></img>`
+    }else if(userNumber == 3){
+        immagini.innerHTML= `<img src="dadi/3.svg" alt="3.svg"></img>`
+    }else if(userNumber == 4){
+        immagini.innerHTML= `<img src="dadi/4.svg" alt="4.svg"></img>`
+    }else if(userNumber == 5){
+        immagini.innerHTML= `<img src="dadi/5.svg" alt="5.svg"></img>`
+    }else if(userNumber == 6){
+        immagini.innerHTML= `<img src="dadi/6.svg" alt="6.svg"></img>`
     }
 })
