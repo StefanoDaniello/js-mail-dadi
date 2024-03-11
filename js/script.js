@@ -36,6 +36,13 @@ emButton.addEventListener("click", function(){
     }
 })
 
+const emClear = document.getElementById('emClear');
+emClear.addEventListener("click", function(){
+    userEmail.value= '';
+    emResult.innerHTML= '';
+})
+
+
 /*
 Gioco dei dadi
 Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
@@ -83,4 +90,11 @@ rnButton.addEventListener("click", function(){
     }else if(userNumber == 6){
         immagini.innerHTML= `<img src="dadi/6.svg" alt="6.svg"></img>`
     }
+})
+
+const rnClear = document.getElementById('rnClear');
+rnClear.addEventListener("click", function(){
+    userNumber.value= '';
+    rnResult.innerHTML= '';
+    immagini.innerHTML=''
 })
