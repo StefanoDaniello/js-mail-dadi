@@ -59,6 +59,8 @@ rnButton.addEventListener("click", function(){
         rnResult.innerHTML='errore inserisci un numero valido tra 0 e 6'
     }else if(randomNumber>userNumber){
     rnResult.innerHTML=`hai perso il computer ha scelto: ${randomNumber}`
+    }else if(randomNumber == userNumber){
+        rnResult.innerHTML=`hai pareggiato il computer ha scelto: ${randomNumber}`
     }else{
     rnResult.innerHTML=`hai vinto il computer ha scelto: ${randomNumber}`
     }
