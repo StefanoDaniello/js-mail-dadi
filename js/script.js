@@ -21,7 +21,7 @@ emButton.addEventListener("click", function(){
 
     for(let i=0 ; i<email.length ; i++){
         if(userEmail.toLowerCase() === email[i].toLocaleLowerCase()){
-            found=true;
+            found=true; /*in informatica viene chiamata flag*/ 
         }
     }
     const emResult = document.getElementById('emResult');
@@ -64,6 +64,12 @@ rnButton.addEventListener("click", function(){
 
     const rnResult = document.getElementById('rnResult');
     const immagini =document.getElementById('immagini');
+
+    rnResult.innerHTML= (userNumber <=0 || userNumber >6 || userNumber === '') ? 'errore inserisci un numero valido tra 1 e 6' :
+    rnResult.innerHTML= (randomNumber>userNumber) ? `hai perso il computer ha scelto: ${randomNumber}` :
+    rnResult.innerHTML= (randomNumber == userNumber) ? `hai pareggiato il computer ha scelto: ${randomNumber}` : `hai vinto il computer ha scelto: ${randomNumber}` ;
+
+    /*
     if(userNumber <=0 || userNumber >6 || userNumber === ''){
         rnResult.innerHTML='errore inserisci un numero valido tra 1 e 6'
         // immagini.innerHTML='';
@@ -74,10 +80,12 @@ rnButton.addEventListener("click", function(){
     }else{
     rnResult.innerHTML=`hai vinto il computer ha scelto: ${randomNumber}`
     }
+    */
 
-    // <img src="dadi/1.svg" alt="1.svg"></img>
-    if(userNumber === ''){
-    immagini.innerHTML='';
+    /*
+     <img src="dadi/1.svg" alt="1.svg"></img>
+    if(userNumber <=0 || userNumber >6 || userNumber === ''){
+    immagini.innerHTML='';      
     }else if(randomNumber == 1){
         immagini.innerHTML= `<img src="dadi/1.svg" alt="1.svg"></img>`
     }else if(randomNumber == 2){
@@ -91,6 +99,14 @@ rnButton.addEventListener("click", function(){
     }else if(randomNumber == 6){
         immagini.innerHTML= `<img src="dadi/6.svg" alt="6.svg"></img>`
     }
+    */
+    immagini.innerHTML = (userNumber <=0 || userNumber >6 || userNumber === '') ? '' :
+    immagini.innerHTML = (randomNumber == 1) ? `<img src="dadi/1.svg" alt="1.svg"></img>` :
+    immagini.innerHTML = (randomNumber == 2) ? `<img src="dadi/2.svg" alt="1.svg"></img>` :
+    immagini.innerHTML = (randomNumber == 3) ? `<img src="dadi/3.svg" alt="1.svg"></img>` :
+    immagini.innerHTML = (randomNumber == 4) ? `<img src="dadi/4.svg" alt="1.svg"></img>` :
+    immagini.innerHTML = (randomNumber == 5) ? `<img src="dadi/5.svg" alt="1.svg"></img>` :
+    immagini.innerHTML = (randomNumber == 6) ? `<img src="dadi/6.svg" alt="1.svg"></img>` : '';
 })
 
 const rnClear = document.getElementById('rnClear');
